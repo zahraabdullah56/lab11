@@ -1,16 +1,16 @@
 public class Sorter {
-    void insertionSort(int arr[])
-    {
-        int n = arr.length;
-        for (int i = 1; i < n; ++i) {
-            int key = arr[i];
-            int j = i - 1;
-            
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
+    public static void selectionSort(int[] arr){
+        for (int i = 0; i < arr.length - 1; i++)
+        {
+            int index = i;
+            for (int j = i + 1; j < arr.length; j++){
+                if (arr[j] < arr[index]){
+                    index = j;//searching for lowest index
+                }
             }
-            arr[j + 1] = key;
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
         }
     }
 }
